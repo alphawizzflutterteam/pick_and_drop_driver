@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "217375442463",
+    "project_id": "picanddrop-a7977",
+    "storage_bucket": "picanddrop-a7977.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:217375442463:android:3e4e2fe47919e17a18372a",
+        "android_client_info": {
+          "package_name": "com.pic.pick_and_drop_driver"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDZlNOkNWA9S-IKXdcyFUX61jEiRuXtWU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
