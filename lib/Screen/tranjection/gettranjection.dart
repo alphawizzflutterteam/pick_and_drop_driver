@@ -90,14 +90,14 @@ SizedBox(height: 10,),
                                         Padding(
                                           padding: const EdgeInsets.only(bottom: 7),
                                           child: Container(
-// height: 80,
+height: 150,
                                             decoration: BoxDecoration(borderRadius: BorderRadius.circular(13),
 
                                                 border: Border.all(color: AppColors.primary,width: 1)
                                             ),
 
 child: Padding(
-  padding: const EdgeInsets.all(5.0),
+  padding: const EdgeInsets.all(10),
   child:   Column(
 
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -107,13 +107,13 @@ child: Padding(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Transaction Type",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 13),),
+        Text("Transaction Type",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),),
         Spacer(),
         SizedBox(
             width: MediaQuery.of(context).size.width/2.3,
             child: Align(
               alignment: Alignment.topRight,
-              child: Text("${tranjectionList[index].transactionType??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.primary,fontSize: 13),
+              child: Text("${tranjectionList[index].transactionType??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),
 
                 maxLines: 3,overflow: TextOverflow.ellipsis,
               ),
@@ -124,31 +124,13 @@ child: Padding(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Payment Type",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 13),),
+        Text("Payment Type",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),),
         Spacer(),
         SizedBox(
             width: MediaQuery.of(context).size.width/2.3,
             child: Align(
               alignment: Alignment.topRight,
-              child: Text("${tranjectionList[index].type??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.primary,fontSize: 13),
-
-                maxLines: 3,overflow: TextOverflow.ellipsis,
-              ),
-            )),
-      ],
-    ),
-
-    Row(
-      mainAxisAlignment: MainAxisAlignment.start,
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text("Transaction Amount",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 13),),
-        Spacer(),
-        SizedBox(
-            width: MediaQuery.of(context).size.width/2.3,
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Text("${tranjectionList[index].amount??""} /-",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.primary,fontSize: 13),
+              child: Text("${tranjectionList[index].type??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),
 
                 maxLines: 3,overflow: TextOverflow.ellipsis,
               ),
@@ -160,13 +142,31 @@ child: Padding(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text("Transaction Date",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 13),),
+        Text("Transaction Amount",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),),
         Spacer(),
         SizedBox(
             width: MediaQuery.of(context).size.width/2.3,
             child: Align(
               alignment: Alignment.topRight,
-              child: Text("${tranjectionList[index].transactionDate.day??""}-${tranjectionList[index].transactionDate.month??""}-${tranjectionList[index].transactionDate.year??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.primary,fontSize: 13),
+              child: Text("${tranjectionList[index].amount??""} /-",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),
+
+                maxLines: 3,overflow: TextOverflow.ellipsis,
+              ),
+            )),
+      ],
+    ),
+
+    Row(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text("Transaction Date",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),),
+        Spacer(),
+        SizedBox(
+            width: MediaQuery.of(context).size.width/2.3,
+            child: Align(
+              alignment: Alignment.topRight,
+              child: Text("${tranjectionList[index].transactionDate.day??""}-${tranjectionList[index].transactionDate.month??""}-${tranjectionList[index].transactionDate.year??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),
 
                 maxLines: 3,overflow: TextOverflow.ellipsis,
               ),

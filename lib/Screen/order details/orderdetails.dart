@@ -211,8 +211,9 @@ SizedBox(height: 30,),
                             ),
                           ],
                         ),
+                        widget.completeList==true?SizedBox.shrink():
                         SizedBox(height: 30,),
-
+                        widget.completeList==true?SizedBox.shrink():
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           crossAxisAlignment:CrossAxisAlignment.start,
@@ -283,15 +284,15 @@ widget.orderdetails?.status.toString()=="delivered"?SizedBox.shrink():
             backgroundColor: Colors.transparent,
             actions:[
             Container(
-              width: 270,
+              width:300,
               decoration: BoxDecoration(borderRadius: BorderRadius.circular(13),
                   color: AppColors.whiteTemp,
                   border: Border.all(color: AppColors.primary,width: 1)
               ),
-              height: 200,
+              height: MediaQuery.of(context).size.height*0.40,
 
 child: Padding(
-  padding: const EdgeInsets.all(8),
+  padding: const EdgeInsets.all(10),
   child:   Column(children: [
 
     SizedBox(height: 20,),
@@ -320,6 +321,7 @@ child: Padding(
       }),
 
   Spacer(),
+
 
   !isLoading?
   Row(
@@ -409,9 +411,7 @@ String ?msg=getDta['message'];
      if(error==false){
        setState(() {
 
-         Navigator.of(context).pushAndRemoveUntil(
-             MaterialPageRoute(builder: (context) => TQscr()),
-                 (Route<dynamic> route) => false);
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => TQscr(),));
          customSnackbar(context,msg.toString());
 
 

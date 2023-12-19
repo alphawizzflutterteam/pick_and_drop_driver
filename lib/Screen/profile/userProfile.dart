@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:pick_and_drop_driver/Helper/Colors.dart';
+import 'package:pick_and_drop_driver/Screen/Request/request.dart';
 import 'package:pick_and_drop_driver/Screen/auth/loginScreen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -67,6 +68,13 @@ SizedBox(height: 20,),
                         Navigator.push(context, MaterialPageRoute(builder: (context) => Tranjection(),));
                       },
                       child: tabProfile(context,"Wallet")),
+
+                  InkWell(
+
+                      onTap: () {
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => RequestScr(),));
+                      },
+                      child: tabProfile(context,'Requst Screen')),
 
                   InkWell(
 

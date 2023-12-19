@@ -80,10 +80,12 @@ SizedBox(height: 10,),
                         Navigator.push(context, MaterialPageRoute(builder: (context) => OrderDetailsScr(completeList: true,orderdetails: CompleateDeliverList[index]),));
 
                       },
-                      child: Padding(
+                      child:
+
+                      Padding(
                         padding: const EdgeInsets.only(bottom: 10),
                         child: Container(
-                          height: 150,
+                          height: 180,
                           width: MediaQuery.of(context).size.width,
                           decoration: BoxDecoration(borderRadius: BorderRadius.circular(13),
 
@@ -93,7 +95,7 @@ SizedBox(height: 10,),
                           child:
 
                           Padding(
-                            padding: const EdgeInsets.only(left: 5,right: 5),
+                            padding: const EdgeInsets.only(left: 10,right: 10),
                             child: Column(
                               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
@@ -101,13 +103,13 @@ SizedBox(height: 10,),
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Name",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 13),),
+                                    Text("Name",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),),
                                     Spacer(),
                                     SizedBox(
                                         width: MediaQuery.of(context).size.width/2.3,
                                         child: Align(
                                           alignment: Alignment.topRight,
-                                          child: Text("${CompleateDeliverList[index].customer??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.primary,fontSize: 13),
+                                          child: Text("${CompleateDeliverList[index].customer??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),
 
                                             overflow: TextOverflow.ellipsis,
                                             maxLines: 3,
@@ -120,13 +122,13 @@ SizedBox(height: 10,),
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Pickup",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 13),),
+                                    Text("Pickup",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),),
                                     Spacer(),
                                     SizedBox(
                                         width: MediaQuery.of(context).size.width/2.3,
                                         child: Align(
                                           alignment: Alignment.topRight,
-                                          child: Text("${CompleateDeliverList[index].pickupAddress??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.primary,fontSize: 13),
+                                          child: Text("${CompleateDeliverList[index].pickupAddress??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),
 
                                             overflow: TextOverflow.ellipsis,
                                             maxLines: 3,
@@ -139,13 +141,13 @@ SizedBox(height: 10,),
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Text("Drop",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 13),),
+                                    Text("Drop",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),),
                                     Spacer(),
                                     SizedBox(
                                         width: MediaQuery.of(context).size.width/2.3,
                                         child: Align(
                                           alignment: Alignment.topRight,
-                                          child: Text("${CompleateDeliverList[index].dropAddress??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.primary,fontSize: 13),
+                                          child: Text("${CompleateDeliverList[index].dropAddress??""}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),
 
                                             maxLines: 3,overflow: TextOverflow.ellipsis,
                                           ),
@@ -158,9 +160,9 @@ SizedBox(height: 10,),
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment:CrossAxisAlignment.start,
                                   children: [
-                                    Text("Item",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 13),),
+                                    Text("Quantity",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),),
                                     Spacer(),
-                                    Text("${CompleateDeliverList[index].qty??''}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.primary,fontSize: 13),
+                                    Text("${CompleateDeliverList[index].qty??''}",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),
 
                                       maxLines: 3,overflow: TextOverflow.ellipsis,
                                     ),
@@ -171,9 +173,9 @@ SizedBox(height: 10,),
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment:CrossAxisAlignment.start,
                                   children: [
-                                    Text("Price",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 13),),
+                                    Text("Price",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),),
                                     Spacer(),
-                                    Text("${CompleateDeliverList[index].price??''}RS",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.primary,fontSize: 13),
+                                    Text("${CompleateDeliverList[index].price??''}RS",style: TextStyle(fontWeight:FontWeight.bold,color: AppColors.tabtextColor,fontSize: 15),
 
                                       maxLines: 3,overflow: TextOverflow.ellipsis,
                                     ),
@@ -189,6 +191,10 @@ SizedBox(height: 10,),
 
                           ,),
                       ),
+
+
+
+
                     );
 
 

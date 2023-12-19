@@ -1,11 +1,13 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_html/flutter_html.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import '../../Api services/api_services/apiBasehelper.dart';
 import '../../Api services/api_services/apiStrings.dart';
 import '../../Helper/Colors.dart';
 import '../../Helper/loadingwidget.dart';
+import '../../Model/notificationModel.dart';
 import '../auth/custumScreen.dart';
 
 class NotificationScr extends StatefulWidget {
@@ -59,21 +61,40 @@ class _NotificationScrState extends State<NotificationScr> {
                         child: Center(child: Text('Notification Not Found',style: TextStyle(fontSize: 15,fontWeight: FontWeight.bold),),),
                       ):
 
-                      ListView.builder(
-                        itemCount: getNotiList.length,
-                        shrinkWrap: true,
-                        physics: NeverScrollableScrollPhysics(),
-                        itemBuilder: (context, index) {
-                        return ListTile(title:
-                        Text("Name - Rohit Singh",style: TextStyle(fontWeight: FontWeight.bold,color: AppColors.blackTemp,fontSize: 13),),
+                      Padding(
+                        padding: const EdgeInsets.only(top: 20),
+                        child: ListView.builder(
+                          itemCount: getNotiList.length,
+                          shrinkWrap: true,
+                          physics: NeverScrollableScrollPhysics(),
+                          itemBuilder: (context, index) {
+                          return Padding(
+                            padding: const EdgeInsets.only(bottom: 8),
+                            child: Container(
 
-subtitle: Text("Lorem Ipsum is simply dummy text of the printing and typesetting industry.",style: TextStyle(color: AppColors.graylightTemp,fontSize: 10),),
+                              decoration: BoxDecoration(borderRadius: BorderRadius.circular(13),
+
+                                  border: Border.all(color: AppColors.primary,width: 1)
+                              ),
 
 
-                            );
+
+                              child: Padding(
+                                padding: const EdgeInsets.all(10),
+                                child: ListTile(title:
+                                Text("${getNotiList[index].title??""}",style: TextStyle(fontWeight: FontWeight.bold,color: AppColors.blackTemp,fontSize: 13),),
+
+subtitle: Text("${getNotiList[index].message??""}",style: TextStyle(color: AppColors.graylightTemp,fontSize: 10),),
 
 
-                      },),
+                                    ),
+                              ),
+                            ),
+                          );
+
+
+                        },),
+                      ),
                     )
 
                   ],
@@ -94,21 +115,42 @@ subtitle: Text("Lorem Ipsum is simply dummy text of the printing and typesetting
     );
   }
   bool isLoading=false;
-  List getNotiList=[];
-  void getNotifivcation(){
+  var userId;
+  List<NotifivationList> getNotiList=[];
+  Future<void> getNotifivcation() async {
     setState(() {
       isLoading=true;
     });
 
-    apiBaseHelper.getAPICall(GetNotificationurl).then((getDta){
+    setState(() {
+      isLoading=true;
+    });
 
-      if(getDta['error']==true){
+    final SharedPreferences prefs = await SharedPreferences.getInstance();
+    userId =prefs.getString('userId');
+    var param ={
+
+      'user_id': '${userId.toString()}'
+
+    };
+
+    apiBaseHelper.postAPICall(GetNotificationurl,param).then((getDta){
+
+      if(getDta['error']==false){
         setState(() {
+
+          getNotiList=NotificationModel.fromJson(getDta).data??[];
           setState(() {
             isLoading=false;
           });
         });
 
+      }
+      else{
+
+        setState(() {
+          isLoading=false;
+        });
       }
 
 

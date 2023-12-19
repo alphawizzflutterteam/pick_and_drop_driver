@@ -12,4 +12,6 @@ final Uri ChangePasswordurl = Uri.parse('${baseUrl}change_password');
 final Uri GetWallecturl = Uri.parse('${baseUrl}transaction_list');
 final Uri GetNotificationurl = Uri.parse('${baseUrl}get_notifications');
 final Uri updateorderurl = Uri.parse('${baseUrl}update_status');
+final Uri spacegetRequesturl = Uri.parse('${baseUrl}request_list');
+final Uri spacePosturl = Uri.parse('${baseUrl}send_request');
 
